@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,900;1,400;1,900&display=swap');
+
+body {
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+
+.mv-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: #314755;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26a0da, #314755);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26a0da, #314755);
+    position: absolute;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: -2;
+
+}
+
+.mv-box.--left {
+    left: 100px;
+    top: 40px;
+    width: 80px;
+    height: 80px;
+    animation: left-box;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.mv-box.--right {
+    right: 100px;
+    top: 90px;
+    width: 120px;
+    height: 120px;
+    animation: right-box;
+
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.mv-box.--center {
+    right: 50%;
+    bottom: 40px;
+    width: 120px;
+    height: 120px;
+    animation: center-box;
+
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes left-box {
+    0% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(100px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes right-box {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-100px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+
+@keyframes center-box {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(100px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+
+.calculator {
+    background: rgba(255, 255, 255, 0.10);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(3.0px);
+    -webkit-backdrop-filter: blur(3.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.--input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 8px 16px;
+    font-size: 1.3rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.10);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(6.0px);
+    -webkit-backdrop-filter: blur(6.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+.--row {
+    display: flex;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: calc(100%/4);
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.20);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(10.0px);
+    -webkit-backdrop-filter: blur(10.0px);
+    border-radius: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    color: rgba(0, 0, 0, 0.70);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .4s all ease;
+}
+
+.btn.--equal {
+    background-color: rgba(255, 255, 255, 0.40)
+}
+
+.btn.--equal:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    z-index: 2;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.30);
+    transform: scale(1.05)
+}
+
+.btn:first-child {
+    margin-left: 0 !important
+}
+
+.btn:last-child {
+    margin-right: 0 !important
+}
